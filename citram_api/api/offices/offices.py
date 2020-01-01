@@ -1,4 +1,4 @@
-from citram_api.constants.constants import Urls
+from citram_api.constants.hosts import Urls
 from citram_api.utils.custom_exceptions import NotEnoughParametersException
 from citram_api.utils.utils import common_request
 

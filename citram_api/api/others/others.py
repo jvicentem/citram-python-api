@@ -1,7 +1,7 @@
 import xmltodict
 from zeep import Client
 
-from citram_api.constants.constants import Urls
+from citram_api.constants.hosts import Urls
 from citram_api.utils.custom_exceptions import NotEnoughParametersException
 from citram_api.utils.utils import common_request
 
@@ -23,3 +23,9 @@ def get_ttp_card_info(ttp_number):
                     'card_info': xmltodict(result['sResulXMLField'])}
 
     return final_result
+
+
+def get_transport_modes():
+    url_formatted = (Urls.CITRAM_WIDGET_SERVICE.value + '/GetModes.php')
+
+    return common_request(url_formatted)

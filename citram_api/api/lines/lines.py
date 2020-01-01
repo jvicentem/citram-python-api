@@ -1,13 +1,13 @@
-from citram_api.constants.constants import Urls
+from citram_api.constants.hosts import Urls
 from citram_api.utils.custom_exceptions import NotEnoughParametersException
 from citram_api.utils.utils import common_request
 
 
-def get_lines_by_mode(mode):
-    if mode is not None:
+def get_lines_by_mode(mode_cod):
+    if mode_cod is not None:
         url_formatted = (Urls.CITRAM_WIDGET_SERVICE.value +
                          '/GetLines.php?mode={mode}'
-                         .format(mode=str(mode)))
+                         .format(mode=str(mode_cod)))
     else:
         raise NotEnoughParametersException('You must specify a transport mode.')
 
@@ -25,11 +25,11 @@ def get_lines_by_municipality(cod_municipality):
     return common_request(url_formatted)
 
 
-def get_lines_by_line_code(line_cod):
-    if line_cod is not None:
+def get_lines_by_line_code(cod_line):
+    if cod_line is not None:
         url_formatted = (Urls.CITRAM_WIDGET_SERVICE.value +
                          '/GetLines.php?codLine={codLine}'
-                         .format(codLine=str(line_cod)))
+                         .format(codLine=str(cod_line)))
     else:
         raise NotEnoughParametersException('You must specify a line code.')
 
