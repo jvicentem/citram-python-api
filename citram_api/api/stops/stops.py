@@ -1,6 +1,6 @@
 import requests
 
-from citram_api.constants.constants import Urls
+from citram_api.constants.hosts import Urls
 from citram_api.utils.custom_exceptions import NotEnoughParametersException
 from citram_api.utils.utils import common_request
 
@@ -80,12 +80,12 @@ def get_stop_times(cod_stop, stop_type, order_by, stop_times_by_iti):
     return res.json()
 
 
-def get_nearest_stops(latitude, longitude, method, precision):
-    if latitude is not None and longitude is not None and method is not None and precision is not None:
+def get_nearest_stops(latitude, longitude, distance, method=2):
+    if latitude is not None and longitude is not None and method is not None and distance is not None:
         url_formatted = (Urls.CITRAM_WIDGET_SERVICE.value +
                          '/GetNearestStopsByLocation.php?latitude={latitude}&longitude={longitude}&mode=&method={method}&precision={precision}'
                          .format(latitude=latitude, longitude=longitude,
-                                 method=method, precision=precision))
+                                 method=method, precision=distance))
     else:
         raise NotEnoughParametersException('You must specify all the needed parameters.')
 
