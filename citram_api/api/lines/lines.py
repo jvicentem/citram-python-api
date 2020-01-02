@@ -204,9 +204,9 @@ def get_lines_by_line_code(cod_line):
     """
     Returns the line specified. This method results in a brief description of the line.
 
-    Example: get_lines_by_line_code(create_cod_line(TransportModes.METRO.value, 10))
+    Example: get_lines_by_line_code(create_line_cod(TransportModes.METRO.value, 10))
 
-    :param str cod_line: Line id. Use utils.create_cod_line to create this id easily.
+    :param str cod_line: Line id. Use utils.create_line_cod to create this id easily.
     :return: The line of the line id specified. The returned dictionary look likes the following example:
 
     {
@@ -258,9 +258,9 @@ def get_line_info(cod_line):
     """
     Returns line information from the line id specified.
 
-    Example: get_line_info(create_cod_line(TransportModes.METRO.value, 10))
+    Example: get_line_info(create_line_cod(TransportModes.METRO.value, 10))
 
-    :param str cod_line: Line id. Use utils.create_cod_line to create this id easily.
+    :param str cod_line: Line id. Use utils.create_line_cod to create this id easily.
     :return: Info of the line id specified. The returned dictionary look likes the following example:
     {
         'lines': {
@@ -337,9 +337,9 @@ def get_lines_timeplanning(cod_line):
     """
     Timeplanning of the specified line id.
 
-    Example: get_lines_timeplanning(create_cod_line(TransportModes.METRO.value, 10))
+    Example: get_lines_timeplanning(create_line_cod(TransportModes.METRO.value, 10))
 
-    :param str cod_line: Line id. Use utils.create_cod_line to create this id easily.
+    :param str cod_line: Line id. Use utils.create_line_cod to create this id easily.
     :return: Timeplanning of the line id specified.
     """
     url_formatted = (Urls.CITRAM_WIDGET_SERVICE.value +
@@ -355,7 +355,7 @@ def get_line_location(mode_cod, cod_itinerary, cod_line, cod_stop, direction):
     right now).
 
     Example:
-    >>> line = get_line_info(create_cod_line(TransportModes.METRO.value, 10))['lines']['LineInformation']
+    >>> line = get_line_info(create_line_cod(TransportModes.METRO.value, 10))['lines']['LineInformation']
     >>> get_line_location(int(line['codMode']),
     >>>                   line['itinerary']['Itinerary'][0]['codItinerary'],
     >>>                   line['codLine'],
@@ -364,7 +364,7 @@ def get_line_location(mode_cod, cod_itinerary, cod_line, cod_stop, direction):
 
     :param int mode_cod: Id of a public transport. Use constants.TransportModes to easily select transport modes ids.
     :param int cod_itinerary: Itinerary of that line.
-    :param str cod_line: Line id. Use utils.create_cod_line to create this id easily.
+    :param str cod_line: Line id. Use utils.create_line_cod to create this id easily.
     :param str cod_stop: Stop id. In this case this is needed as a formality. Any stop of that line gives the same
                                   result.
     :param int direction: Direction of a itinerary.
@@ -383,10 +383,10 @@ def get_incidents_affectations(mode_cod, cod_line):
     """
     Returns incidents happening at the specified line.
 
-    Example: get_incidents_affectations(TransportModes.METRO.value, create_cod_line(TransportModes.METRO.value, 10))
+    Example: get_incidents_affectations(TransportModes.METRO.value, create_line_cod(TransportModes.METRO.value, 10))
 
     :param int mode_cod: Id of a public transport. Use constants.TransportModes to easily select transport modes ids.
-    :param str cod_line: Line id. Use utils.create_cod_line to create this id easily.
+    :param str cod_line: Line id. Use utils.create_line_cod to create this id easily.
     :return dict: The current incidents going on in that line.
     """
     url_formatted = (Urls.CITRAM_WIDGET_SERVICE.value +

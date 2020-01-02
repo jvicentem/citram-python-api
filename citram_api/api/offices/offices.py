@@ -106,7 +106,7 @@ def get_offices_by_municipality(cod_municipality, offices_type=None):
     :param str offices_type: Office type. If set, filters the results by the office type specified.
                              Use constants.OfficeTypes to choose the available types easily.
                              Optional, default: None (no filtering).
-    :return dict: A dictionary with a list of offices in that municipalitie.
+    :return dict: A dictionary with a list of offices in that municipality.
     """
     if cod_municipality is not None:
         url_formatted = (Urls.CITRAM_WIDGET_SERVICE.value +
