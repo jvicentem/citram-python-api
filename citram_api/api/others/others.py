@@ -1,5 +1,6 @@
 import xmltodict
 from zeep import Client
+from zeep.helpers import serialize_object
 
 from citram_api.constants.hosts import Urls
 from citram_api.utils.custom_exceptions import NotEnoughParametersException
@@ -56,14 +57,15 @@ def get_ttp_card_info(ttp_number):
     """
     if ttp_number is not None:
         client = Client(Urls.CITRAM_CARD_SERVICE.value)
+
         result = client.service.ConsultaSaldo1(sNumeroTTP=ttp_number)
+
+        final_result = {'status': result['iCallLogField'],
+                        'card_info': xmltodict.parse(result['sResulXMLField'])}
+
+        return final_result        
     else:
         raise NotEnoughParametersException('You must specify a transport card number.')
-
-    final_result = {'status': result['iCallLogField'],
-                    'card_info': xmltodict(result['sResulXMLField'])}
-
-    return final_result
 
 
 def get_transport_modes():
