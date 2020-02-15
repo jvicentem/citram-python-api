@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='citram-python-api',
-    version='1.0.0',
+    version='1.0.2',
     author='José Vicente Mellado',
     author_email='contact@jvm16.xyz ',
     description='Regional Consortium of Transportation for Madrid API wrapper',
