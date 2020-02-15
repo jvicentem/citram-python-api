@@ -12,31 +12,34 @@ def get_municipalities():
     Returns the municipalities that are in CRTM system with their ids.
 
     :return dict: A dictionary with the municipalities and ids. It looks like this:
-    {
-        'municipalities': {
-            'Municipality': [{
-                'codMunicipality': '4273',
-                'name': 'ACEBEDA, LA'
-            }, {
-                'codMunicipality': '4274',
-                'name': 'AJALVIR'
-            }, {
-                'codMunicipality': '4275',
-                'name': 'ALAMEDA DEL VALLE'
-            }, {
-                'codMunicipality': '4276',
-                'name': 'ÁLAMO, EL'
-            }, {
-                'codMunicipality': '4277',
-                'name': 'ALCALÁ DE HENARES'
-            }, {
-                'codMunicipality': '4278',
-                'name': 'ALCOBENDAS'
-            },
-            ...
-            ]
+
+    .. code-block:: python   
+        
+        {
+            'municipalities': {
+                'Municipality': [{
+                    'codMunicipality': '4273',
+                    'name': 'ACEBEDA, LA'
+                }, {
+                    'codMunicipality': '4274',
+                    'name': 'AJALVIR'
+                }, {
+                    'codMunicipality': '4275',
+                    'name': 'ALAMEDA DEL VALLE'
+                }, {
+                    'codMunicipality': '4276',
+                    'name': 'ÁLAMO, EL'
+                }, {
+                    'codMunicipality': '4277',
+                    'name': 'ALCALÁ DE HENARES'
+                }, {
+                    'codMunicipality': '4278',
+                    'name': 'ALCOBENDAS'
+                },
+                ...
+                ]
+            }
         }
-    }
     """
     url_formatted = (Urls.CITRAM_WIDGET_SERVICE.value + '/GetMunicipalities.php')
 
@@ -73,38 +76,41 @@ def get_transport_modes():
     Returns the transport modes available and their id.
 
     :return dict: Transport modes and their ids. The result looks like this:
-    {
-        'modes': {
-            'Mode': [{
-                'codMode': '4',
-                'name': 'METRO'
-            }, {
-                'codMode': '6',
-                'name': 'AUTOBUSES EMT'
-            }, {
-                'codMode': '5',
-                'name': 'CERCANIAS'
-            }, {
-                'codMode': '10',
-                'name': 'METRO LIGERO/TRANVÍA'
-            }, {
-                'codMode': '8',
-                'name': 'AUTOBUSES INTERURBANOS'
-            }, {
-                'codMode': '9',
-                'name': 'AUTOBUSES URBANOS OTROS MUNICIPIOS'
-            }, {
-                'codMode': '90',
-                'name': 'INTERCAMBIADORES'
-            }, {
-                'codMode': '0',
-                'name': 'LARGO RECORRIDO'
-            }, {
-                'codMode': '1',
-                'name': 'APARCAMIENTOS'
-            }]
+
+    .. code-block:: python   
+            
+        {
+            'modes': {
+                'Mode': [{
+                    'codMode': '4',
+                    'name': 'METRO'
+                }, {
+                    'codMode': '6',
+                    'name': 'AUTOBUSES EMT'
+                }, {
+                    'codMode': '5',
+                    'name': 'CERCANIAS'
+                }, {
+                    'codMode': '10',
+                    'name': 'METRO LIGERO/TRANVÍA'
+                }, {
+                    'codMode': '8',
+                    'name': 'AUTOBUSES INTERURBANOS'
+                }, {
+                    'codMode': '9',
+                    'name': 'AUTOBUSES URBANOS OTROS MUNICIPIOS'
+                }, {
+                    'codMode': '90',
+                    'name': 'INTERCAMBIADORES'
+                }, {
+                    'codMode': '0',
+                    'name': 'LARGO RECORRIDO'
+                }, {
+                    'codMode': '1',
+                    'name': 'APARCAMIENTOS'
+                }]
+            }
         }
-    }
     """
     url_formatted = (Urls.CITRAM_WIDGET_SERVICE.value + '/GetModes.php')
 
