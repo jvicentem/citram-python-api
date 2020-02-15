@@ -9,6 +9,8 @@ and Metro Ligero. You can request information of CTRM offices and parkings.
 
 Any kind of transport fits in the paradigm of stops and lines.
 
+Please visit [https://citram-python-api.readthedocs.io/en/latest/](https://citram-python-api.readthedocs.io/en/latest/) to read the documentation.
+
 ## Modules description:
 - lines: Requests relative to transport lines.
 - offices: Requests relative to CTRM offices.
