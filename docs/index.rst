@@ -1,4 +1,4 @@
-CITRAM Pythin API Wrapper documentation
+CITRAM Python API Wrapper documentation
 =============================================
 
 Python wrapper of Consorcio de Transportes de Madrid (CTRM) API.
