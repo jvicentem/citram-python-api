@@ -17,5 +17,5 @@ setuptools.setup(
     python_requires='>=3.6',
     install_requires=['zeep==3.4.0',
                       'xmltodict==0.12.0',
-                      'requests==2.22.0']
+                      'requests==2.31.0']
 )
